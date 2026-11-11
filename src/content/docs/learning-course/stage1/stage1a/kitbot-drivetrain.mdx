@@ -107,11 +107,27 @@ WPILib has a CANPort enum.
     <TabItem label = "CTRE">
         CTRE uses a `CANBus` object that is constructed using a `CANPort` value to specify which of Systemcore's CANBuses the device is connected to.
 
+        If you are copying the motor declarations into `Robot.java`, make sure these imports are at the top of the file:
+
+        ```java
+        import com.ctre.phoenix6.CANBus;
+        import com.ctre.phoenix6.hardware.TalonFX;
+        import org.wpilib.hardware.bus.CANPort;
+        ```
+
     </TabItem>
     <TabItem label = "REV">
         REV uses `CANPort` to specify which of Systemcore's CANBuses the device is connected to.
 
- </TabItem>
+        If you are copying the motor declarations into `Robot.java`, make sure these imports are at the top of the file:
+
+        ```java
+        import com.revrobotics.spark.SparkLowLevel.MotorType;
+        import com.revrobotics.spark.SparkMax;
+        import org.wpilib.hardware.bus.CANPort;
+        ```
+
+    </TabItem>
 
 </Tabs>
 Only `CAN_S0` through `CAN_S4` will ever be used since Systemcore only has five CAN Busses.
